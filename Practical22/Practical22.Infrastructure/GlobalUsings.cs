@@ -1,0 +1,15 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Practical22.Domain.DTOs;
+global using Practical22.Domain.DTOs.Department;
+global using Practical22.Domain.DTOs.Employee;
+global using Practical22.Domain.Entities;
+global using Practical22.Domain.Entities.Interfaces;
+global using Practical22.Domain.Interfaces;
+global using Practical22.Domain.Interfaces.Repositories;
+global using Practical22.Domain.Interfaces.Services;
+global using Practical22.Infrastructure.Data;
+global using Practical22.Infrastructure.Mappers.Interfaces;
+global using Practical22.Infrastructure.Repositories;
+global using Riok.Mapperly.Abstractions;
+global using System.Reflection;
