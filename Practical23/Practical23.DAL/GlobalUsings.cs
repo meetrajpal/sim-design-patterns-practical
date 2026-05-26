@@ -1,0 +1,10 @@
+﻿global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Practical23.DAL.Data;
+global using Practical23.DAL.Repositories;
+global using Practical23.Domain.DTOs;
+global using Practical23.Domain.Entities;
+global using Practical23.Domain.Entities.Interfaces;
+global using Practical23.Domain.Interfaces;
+global using Practical23.Domain.Interfaces.Repositories;
+global using System.Reflection;

@@ -1,0 +1,9 @@
+﻿global using Practical23.BAL.Mappers.Interfaces;
+global using Practical23.Domain.DTOs;
+global using Practical23.Domain.DTOs.Department;
+global using Practical23.Domain.DTOs.Employee;
+global using Practical23.Domain.Entities;
+global using Practical23.Domain.Interfaces;
+global using Practical23.Domain.Interfaces.Repositories;
+global using Practical23.Domain.Interfaces.Services;
+global using Riok.Mapperly.Abstractions;
