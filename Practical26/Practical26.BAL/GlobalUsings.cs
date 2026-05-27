@@ -1,0 +1,13 @@
+﻿global using FluentValidation;
+global using Practical26.BAL.Commands.Departments;
+global using Practical26.BAL.Commands.Employees;
+global using Practical26.BAL.Interfaces;
+global using Practical26.BAL.Mappers.Interfaces;
+global using Practical26.Domain.DTOs;
+global using Practical26.Domain.DTOs.Department;
+global using Practical26.Domain.DTOs.Employee;
+global using Practical26.Domain.Entities;
+global using Practical26.Domain.Interfaces;
+global using Practical26.Domain.Interfaces.Repositories.Departments;
+global using Practical26.Domain.Interfaces.Repositories.Employees;
+global using Riok.Mapperly.Abstractions;

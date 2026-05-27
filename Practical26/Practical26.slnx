@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Practical26.API/Practical26.API.csproj" />
+  <Project Path="Practical26.BAL/Practical26.BAL.csproj" />
+  <Project Path="Practical26.DAL/Practical26.DAL.csproj" />
+  <Project Path="Practical26.Domain/Practical26.Domain.csproj" />
+</Solution>
