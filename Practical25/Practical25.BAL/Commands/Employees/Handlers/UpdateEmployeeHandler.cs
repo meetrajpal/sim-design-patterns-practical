@@ -21,7 +21,7 @@ public class UpdateEmployeeHandler(IUnitOfWork unitOfWork, IEmployeeMapper emplo
         if (!departmentExists)
             return ApiResponse<string>.Failure("Department not found.");
 
-        employeeMapper.EmployeeUpdateRequestDTOToEmployee(command, employee);
+        employeeMapper.EmployeeUpdateCommandToEmployee(command, employee);
         employee.DepartmentId = departmentId;
 
 

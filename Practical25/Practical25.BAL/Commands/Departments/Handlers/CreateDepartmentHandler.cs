@@ -15,7 +15,7 @@ public class CreateDepartmentHandler(IUnitOfWork unitOfWork, IDepartmentMapper d
             return ApiResponse<Department>.Failure("Record with same department name already exists.");
         }
 
-        var department = departmentMapper.DepartmentCreateRequestDTOToDepartment(command);
+        var department = departmentMapper.CreateDepartmentCommandToDepartment(command);
         var created = await _departmentWriteRepository.AddAsync(department, cancellationToken);
 
         await unitOfWork.SaveChangesAsync();
