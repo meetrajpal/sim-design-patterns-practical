@@ -54,7 +54,6 @@ public class DepartmentService(IUnitOfWork unitOfWork, IDepartmentMapper departm
             return ApiResponse<string>.Failure("Department not found.", [$"No department found with id: {parsedId}"]);
 
         departmentMapper.DepartmentUpdateRequestDTOToDepartment(dto, department);
-        department.UpdatedAt = DateTime.UtcNow;
 
         await _departmentRepository.UpdateAsync(department);
         await unitOfWork.SaveChangesAsync();

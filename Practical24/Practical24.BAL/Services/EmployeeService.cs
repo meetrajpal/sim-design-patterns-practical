@@ -67,7 +67,6 @@ public class EmployeeService(IUnitOfWork unitOfWork, IEmployeeMapper employeeMap
 
         employeeMapper.EmployeeUpdateRequestDTOToEmployee(dto, employee);
         employee.DepartmentId = departmentId;
-        employee.UpdatedAt = DateTime.UtcNow;
 
         await _employeeRepository.UpdateAsync(employee);
         await unitOfWork.SaveChangesAsync();
