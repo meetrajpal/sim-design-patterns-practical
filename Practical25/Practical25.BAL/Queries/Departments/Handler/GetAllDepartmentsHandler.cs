@@ -1,0 +1,23 @@
+﻿namespace Practical25.BAL.Queries.Departments.Handler;
+
+public class GetAllDepartmentsHandler(IDepartmentReadRepository departmentReadRepository, IFileLogger logger) : IRequestHandler<GetAllDepartmentsQuery, ApiResponse<List<Department>>>
+{
+
+    public async Task<ApiResponse<List<Department>>> Handle(GetAllDepartmentsQuery query, CancellationToken cancellationToken = default)
+    {
+        logger.Log("Fetching department records.");
+
+        if (string.IsNullOrWhiteSpace(query.Id))
+            return await departmentReadRepository.GetAllAsync(null, query.IsActive, query.Page, query.Limit, cancellationToken);
+
+        if (!Guid.TryParse(query.Id, out var parsedId))
+        {
+            logger.LogError($"Invalid department id format: {query.Id}", null);
+            return ApiResponse<List<Department>>.Failure("Error occured while retrieving departments.", [$"Invalid Guid format: {query.Id}"]);
+        }
+
+        var result = await departmentReadRepository.GetAllAsync(parsedId, query.IsActive, query.Page, query.Limit, cancellationToken);
+        logger.Log($"Department fetched successfully with id: {parsedId}");
+        return result;
+    }
+}

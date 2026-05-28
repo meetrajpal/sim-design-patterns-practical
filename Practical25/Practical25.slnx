@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Practical25.API/Practical25.API.csproj" Id="c20861cc-2cad-4ba5-b43d-732a92e91521" />
+  <Project Path="Practical25.BAL/Practical25.BAL.csproj" Id="5d2d604f-ec18-4a63-a7a0-b6caa284be24" />
+  <Project Path="Practical25.DAL/Practical25.DAL.csproj" Id="e4916e29-5480-4130-a677-24f09f4c3eec" />
+  <Project Path="Practical25.Domain/Practical25.Domain.csproj" Id="dcca72cf-581e-4cd7-b202-8ccc78bb0a82" />
+</Solution>
