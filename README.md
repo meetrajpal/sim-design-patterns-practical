@@ -1,5 +1,5 @@
 # Design Patterns Practical
-This single repository contains all practicals of ASP.NET (.NET Core) MVC.
+This single repository contains all practicals of ASP.NET (.NET Core) Design Patterns.
 
 
 ## Notes
