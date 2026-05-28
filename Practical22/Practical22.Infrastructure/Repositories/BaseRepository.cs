@@ -1,4 +1,4 @@
-﻿namespace Practical22.Infrastructure.Repositories;
+﻿namespace Practical22.DAL.Repositories;
 
 public class BaseRepository<T>(ApplicationDbContext context) : IBaseRepository<T> where T : BaseEntity
 {
@@ -16,14 +16,14 @@ public class BaseRepository<T>(ApplicationDbContext context) : IBaseRepository<T
 
         query = query.Skip((page - 1) * limit).Take(limit);
 
-        var data = await query.ToListAsync();
+        var data = await query.AsNoTracking().ToListAsync();
 
 
         return ApiResponse<List<T>>.Success(data);
     }
-    public async Task<T?> GetByIdAsync(Guid id)
+    public virtual async Task<T?> GetByIdAsync(Guid id)
     {
-        return await _dbSet.FirstOrDefaultAsync(x => x.Id == id);
+        return await _dbSet.FindAsync(id);
     }
 
     public virtual async Task<T> AddAsync(T entity)
@@ -47,7 +47,7 @@ public class BaseRepository<T>(ApplicationDbContext context) : IBaseRepository<T
 
     public virtual async Task<bool> ExistsAsync(Guid id)
     {
-        return await _dbSet.AnyAsync(e => e.Id == id);
+        return await _dbSet.AsNoTracking().AnyAsync(e => e.Id == id);
     }
 
 }

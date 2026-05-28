@@ -7,7 +7,7 @@ public class BaseWriteRepository<T>(ApplicationDbContext context) : IBaseWriteRe
 
     public virtual async Task<T?> GetByIdAsync(Guid id)
     {
-        return await _dbSet.FirstOrDefaultAsync(x => x.Id == id);
+        return await _dbSet.FindAsync(id);
     }
 
     public virtual async Task<T> AddAsync(T entity)
@@ -31,7 +31,7 @@ public class BaseWriteRepository<T>(ApplicationDbContext context) : IBaseWriteRe
 
     public virtual async Task<bool> ExistsAsync(Guid id)
     {
-        return await _dbSet.AnyAsync(e => e.Id == id);
+        return await _dbSet.AsNoTracking().AnyAsync(e => e.Id == id);
     }
 
 }
