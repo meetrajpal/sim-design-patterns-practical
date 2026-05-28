@@ -1,7 +1,12 @@
-﻿namespace Practical26.BAL.Mappers.Interfaces;
+﻿using Practical26.BAL.Queries.Employees;
+
+namespace Practical26.BAL.Mappers.Interfaces;
 
 public interface IEmployeeMapper
 {
-    Employee EmployeeCreateRequestDTOToEmployee(EmployeeCreateRequestDTO dto);
-    void EmployeeUpdateRequestDTOToEmployee(EmployeeUpdateRequestDTO dto, Employee employee);
+    GetAllEmployeesQuery GetAllEmployeesRequestDTOToGetAllEmployeesQuery(GetAllEmployeesRequestDTO dto);
+    CreateEmployeeCommand CreateRequestDTOToCreateEmployeeCommand(EmployeeCreateRequestDTO dto);
+    UpdateEmployeeCommand UpdateRequestDTOToUpdateEmployeeCommand(EmployeeUpdateRequestDTO dto);
+    Employee CreateEmployeeCommandToEmployee(CreateEmployeeCommand command);
+    void EmployeeUpdateCommandToEmployee(UpdateEmployeeCommand command, Employee Employee);
 }

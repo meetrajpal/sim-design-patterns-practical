@@ -15,7 +15,7 @@ public class CreateEmployeeHandler(IUnitOfWork unitOfWork, IEmployeeMapper emplo
         if (!departmentExists)
             return ApiResponse<Employee>.Failure("Department not found.");
 
-        var employee = employeeMapper.EmployeeCreateRequestDTOToEmployee(command);
+        var employee = employeeMapper.CreateEmployeeCommandToEmployee(command);
         employee.DepartmentId = departmentId;
 
         var created = await employeeWriteRepository.AddAsync(employee);

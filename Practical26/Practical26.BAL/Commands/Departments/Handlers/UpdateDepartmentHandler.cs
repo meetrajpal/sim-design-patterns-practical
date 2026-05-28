@@ -14,8 +14,7 @@ public class UpdateDepartmentHandler(IUnitOfWork unitOfWork, IDepartmentMapper d
         if (department is null)
             return ApiResponse<string>.Failure("Department not found.", [$"No department found with id: {parsedId}"]);
 
-        departmentMapper.DepartmentUpdateRequestDTOToDepartment(command, department);
-        department.UpdatedAt = DateTime.UtcNow;
+        departmentMapper.DepartmentUpdateCommandToDepartment(command, department);
 
         await _departmentRepository.UpdateAsync(department);
         await unitOfWork.SaveChangesAsync();
